@@ -7,13 +7,15 @@ import { FirstComponent } from './first/first.component';
 import { SecondComponent } from './second.component';
 import { ColorComponent } from './color/color.component';
 import {FormsModule} from '@angular/forms';
+import { CardSimulatorComponent } from './card-simulator/card-simulator.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FirstComponent,
     SecondComponent,
-    ColorComponent
+    ColorComponent,
+    CardSimulatorComponent
   ],
   imports: [
     BrowserModule,
