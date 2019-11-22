@@ -1,3 +1,4 @@
 <ol class="list-group">
-  <app-item></app-item>
+  <app-item (selectPersonne)="selectPersonne($event)" [personne]="personnes[0]"></app-item>
+  <app-item (selectPersonne)="selectPersonne($event)" [personne]="personnes[1]"></app-item>
 </ol>

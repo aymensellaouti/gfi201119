@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Personne} from '../Model/personne';
 
 @Component({
@@ -8,13 +8,19 @@ import {Personne} from '../Model/personne';
 })
 export class ListeComponent implements OnInit {
   personnes: Personne[];
+  @Output() forwardPersonne = new EventEmitter();
   constructor() { }
 
   ngOnInit() {
     this.personnes = [
       new Personne(1, 'aymen', 'sellaouti', 37, 1111, 'teacher', 'as.jpg'),
-      new Personne(2, 'aymen', 'sellaouti', 37, 1111, 'teacher', 'as.jpg'),
+      new Personne(2, 'test', 'test', 37, 1111, 'teacher', 'as.jpg'),
     ];
   }
 
+  selectPersonne(personne: Personne) {
+    this.forwardPersonne.emit(
+      personne
+    );
+  }
 }
