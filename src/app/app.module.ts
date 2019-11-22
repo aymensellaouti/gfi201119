@@ -16,6 +16,9 @@ import { ListeComponent } from './cv/liste/liste.component';
 import { ItemComponent } from './cv/item/item.component';
 import { NgstyleComponent } from './directives/ngstyle/ngstyle.component';
 import { WordComponent } from './directives/word/word.component';
+import { NgclassComponent } from './directives/ngclass/ngclass.component';
+import { HighlightDirective } from './highlight.directive';
+import { RainbowDirective } from './rainbow.directive';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,10 @@ import { WordComponent } from './directives/word/word.component';
     ListeComponent,
     ItemComponent,
     NgstyleComponent,
-    WordComponent
+    WordComponent,
+    NgclassComponent,
+    HighlightDirective,
+    RainbowDirective
   ],
   imports: [
     BrowserModule,
