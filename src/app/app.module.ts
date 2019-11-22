@@ -19,6 +19,7 @@ import { WordComponent } from './directives/word/word.component';
 import { NgclassComponent } from './directives/ngclass/ngclass.component';
 import { HighlightDirective } from './highlight.directive';
 import { RainbowDirective } from './rainbow.directive';
+import { DefaultImagePipe } from './default-image.pipe';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { RainbowDirective } from './rainbow.directive';
     WordComponent,
     NgclassComponent,
     HighlightDirective,
-    RainbowDirective
+    RainbowDirective,
+    DefaultImagePipe
   ],
   imports: [
     BrowserModule,
