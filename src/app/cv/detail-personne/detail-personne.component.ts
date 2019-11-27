@@ -21,6 +21,11 @@ export class DetailPersonneComponent implements OnInit {
         this.personne = this.cvService.findPersonneById(params.id);
       }
     );
+    this.activatedRoute.queryParams.subscribe(
+      (params) => {
+          console.log(params);
+      }
+    );
   }
   deletePersonne() {
     this.cvService.deletePersonne(this.personne);
