@@ -3,11 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 import {CvComponent} from './cv/cv/cv.component';
 import {ColorComponent} from './color/color.component';
 import {TodoComponent} from './todo/todo.component';
+import {DetailPersonneComponent} from './cv/detail-personne/detail-personne.component';
 
 
 const routes: Routes = [
   {path: '', component: CvComponent},
-  {path: 'color', component: ColorComponent},
+  {path: 'cv/detail/:id', component: DetailPersonneComponent},
+  {path: 'color/:couleur', component: ColorComponent},
   {path: 'todo', component: TodoComponent},
 ];
 

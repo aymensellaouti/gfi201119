@@ -55,6 +55,9 @@
           <button [disabled]="embaucheService.isEmbauched(personne)" (click)="embaucher()" class="btn btn-primary">
               Embaucher
           </button>
+          <button (click)="goToDetail()" class="btn btn-dark">
+              Détails
+          </button>
         </div>
       </div>
     </div> <!-- end back panel -->
