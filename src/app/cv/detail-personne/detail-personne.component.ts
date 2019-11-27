@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {Personne} from '../Model/personne';
 import {CvService} from '../services/cv.service';
 
@@ -12,13 +12,19 @@ export class DetailPersonneComponent implements OnInit {
   personne: Personne;
   constructor(
     private activatedRoute: ActivatedRoute,
-    private cvService: CvService
+    private cvService: CvService,
+    private router: Router
   ) { }
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(
       (params) => {
-        this.personne = this.cvService.findPersonneById(params.id);
+        this.cvService.findPersonneById(params.id).subscribe(
+          (personne) => this.personne = personne,
+          (erreur) => {
+            this.router.navigate(['']);
+          }
+        );
       }
     );
     this.activatedRoute.queryParams.subscribe(
@@ -28,6 +34,14 @@ export class DetailPersonneComponent implements OnInit {
     );
   }
   deletePersonne() {
-    this.cvService.deletePersonne(this.personne);
+    this.cvService.deletePersonne(this.personne).subscribe(
+      (data) => {
+        console.log(data);
+        this.router.navigate(['']);
+      },
+      (erreur) => {
+        console.log(erreur);
+      }
+    );
   }
 }

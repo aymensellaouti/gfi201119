@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {Personne} from '../Model/personne';
 import {Router} from '@angular/router';
 import {Observable} from 'rxjs';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 const API_LINK = 'https://immense-citadel-91115.herokuapp.com/api/personnes';
 @Injectable({
   providedIn: 'root'
@@ -25,14 +25,12 @@ export class CvService {
   getPersonnes(): Observable<Personne[]> {
     return this.http.get<Personne[]>(API_LINK);
   }
-  findPersonneById(id: string): Personne {
-    return this.personnes.find(
-      (personne) => personne.id === +id
-    );
+  findPersonneById(id: string): Observable<Personne> {
+    return this.http.get<Personne>(API_LINK + `/${id}`);
   }
-  deletePersonne(personne: Personne) {
-    const index = this.personnes.indexOf(personne);
-    this.personnes.splice(index, 1);
-    this.router.navigate(['']);
+  deletePersonne(personne: Personne): Observable<any> {
+    const token = localStorage.getItem('token');
+    const headers = new HttpHeaders().set('Authorization', token);
+    return this.http.delete<Personne>(API_LINK + `/${personne.id}`, {headers});
   }
 }
