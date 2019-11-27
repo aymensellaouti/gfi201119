@@ -6,6 +6,7 @@ import {TodoComponent} from './todo/todo.component';
 import {DetailPersonneComponent} from './cv/detail-personne/detail-personne.component';
 import {FrontComponent} from './front/front.component';
 import {NF404Component} from './nf404/nf404.component';
+import {LoginComponent} from './login/login.component';
 
 
 const routes: Routes = [
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path: '', component: FrontComponent, children: [
       {path: 'color/:couleur', component: ColorComponent},
       {path: 'todo', component: TodoComponent},
+      {path: 'login', component: LoginComponent},
     ]},
   {path: '**', component: NF404Component}
 ];

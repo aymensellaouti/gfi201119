@@ -20,7 +20,6 @@ import { NgclassComponent } from './directives/ngclass/ngclass.component';
 import { HighlightDirective } from './highlight.directive';
 import { RainbowDirective } from './rainbow.directive';
 import { DefaultImagePipe } from './default-image.pipe';
-import {LoggerService} from './services/logger.service';
 import { TodoComponent } from './todo/todo.component';
 import { EmbaucheComponent } from './cv/embauche/embauche.component';
 import { HeaderComponent } from './header/header.component';
@@ -29,6 +28,11 @@ import { DetailPersonneComponent } from './cv/detail-personne/detail-personne.co
 import { AdminComponent } from './admin/admin.component';
 import { FrontComponent } from './front/front.component';
 import { NF404Component } from './nf404/nf404.component';
+import { LoginComponent } from './login/login.component';
+import { ObservableComponent } from './observable/observable.component';
+
+import {HttpClientModule} from '@angular/common/http';
+import { HttpComponent } from './http/http.component';
 
 @NgModule({
   declarations: [
@@ -56,12 +60,16 @@ import { NF404Component } from './nf404/nf404.component';
     DetailPersonneComponent,
     AdminComponent,
     FrontComponent,
-    NF404Component
+    NF404Component,
+    LoginComponent,
+    ObservableComponent,
+    HttpComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
