@@ -52,9 +52,9 @@
       </div>
       <div class="footer">
         <div class="social-links text-center">
-          <a href="https://creative-tim.com" class="facebook"><i class="fa fa-facebook fa-fw"></i></a>
-          <a href="https://creative-tim.com" class="google"><i class="fa fa-google-plus fa-fw"></i></a>
-          <a href="https://creative-tim.com" class="twitter"><i class="fa fa-twitter fa-fw"></i></a>
+          <button [disabled]="embaucheService.isEmbauched(personne)" (click)="embaucher()" class="btn btn-primary">
+              Embaucher
+          </button>
         </div>
       </div>
     </div> <!-- end back panel -->

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {TodoService} from '../../services/todo.service';
 
 @Component({
   selector: 'app-ngclass',
@@ -8,12 +9,15 @@ import { Component, OnInit } from '@angular/core';
 export class NgclassComponent implements OnInit {
   isAllume = false;
 
-  constructor() { }
+  constructor(
+    private todoService: TodoService
+  ) { }
 
   ngOnInit() {
   }
 
   allumeEteint() {
+    this.todoService.loggerTodos();
     this.isAllume = !this.isAllume;
   }
 }
