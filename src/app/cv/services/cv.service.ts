@@ -3,7 +3,7 @@ import {Personne} from '../Model/personne';
 import {Router} from '@angular/router';
 import {Observable} from 'rxjs';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-const API_LINK = 'https://immense-citadel-91115.herokuapp.com/api/personnes';
+const API_LINK = 'https://apilb.tridevs.net/explorer/api/personnes';
 @Injectable({
   providedIn: 'root'
 })
